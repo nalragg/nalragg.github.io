@@ -308,26 +308,25 @@ p{
 }
 
 #section1 #slide2 {
-    background-image: url(../img/bg_movie.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#section1 #slide3 {
-    background-image: url(../img/bg_busking.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#section1 #slide4 {
     background-image: url(../img/bg_exercise.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+#section1 #slide3 {
+    background-image: url(../img/bg_movie.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#section1 #slide4 {
+    background-image: url(../img/bg_busking.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 #section1 .slide.active {
     opacity: 1;
 }
