@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<title>2015VB - SHERLOCK</title>
+<meta name="author" content="Alvaro Trigo Lopez" />
+<meta name="description" content="fullPage full-screen backgrounds." />
+<meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,backgrounds,full-screen" />
+<meta name="Resource-type" content="Document" />
+<link rel="stylesheet" type="text/css" href="static/css/style.css" />
+</head>
+<body>
+<!--
+/*
+         __.               *_.            *_.      _*
+  *_____|  | *_.           | |            | | __.('_')             _  *_.
+ /`  ____\ |_| | ____ *_ __| | ____*  ____| |/ /  | | ___*  *___. | |/ /   .___*
+*|  | __|   _` |/ __ \| '__/ |/ __ \ / ___\   /   | |' _/ `\|  _ \|   /   / __ `\
+_\ _ `   \ `_  |  ___/| |  | | (__) | (___|   \__ | | | (_) |  __/| \ \__|    __/*
+\________/_||_/ \____/|_|  |_|\____/ \____/_|\__(@)_|_|\___/|_|   |_|\__/`\_____/`
+죄송한데 크로스 브라우징 그런거 없으니까 크롬으로 봐주세요.
+
+ */
+  -->
+<div id="fullpage">
+
+	<section class="section" id="section0">
+		<video autoplay loop muted controls="true" id="myVideo" class="myVideo01">
+			<source src="static/img/LUV.mp4" type="video/mp4">
+			<source src="static/img/LUV.webm" type="video/webm">
+		</video>
+
+		<div class="layer intro">
+			<h1 class="h">SHERLOCK 2015</h1>
+			<span class="h-sub">@ iropke</span>
+		</div>
+
+		<div class="layer outro">
+			<h1>감사합니다</h1>
+			<span class="h-sub"> sherlock @ iropke</span>
+		</div>
+	</section>
+
+	<section class="section" id="section1">
+		<section class="slide" id="slide1">
+			<div class="layer">
+				<h1 class="h">2015 rough Plan</h1>
+			</div>
+	    </section>
+	    <section class="slide" id="slide2">
+			<div class="layer">
+				<h1 class="h">Movie</h1>
+			</div>
+	    </section>
+	    <section class="slide" id="slide3">
+			<div class="layer">
+				<h1 class="h">busking</h1>
+			</div>
+	    </section>
+	    <section class="slide" id="slide4">
+			<div class="layer">
+				<h1 class="h">운동</h1>
+			</div>
+	    </section>
+	</section>
+
+	<section class="section" id="section2">
+		<h1>1만 시간</h1>
+	</section>
+
+
+	<section class="section" id="section3">
+		<video loop muted controls="true" id="myVideo" class="myVideo02">
+			<source src="static/img/cf.mp4" type="video/mp4">
+			<source src="static/img/cf.webm" type="video/webm">
+		</video>
+		<div class="layer">
+			<h1>잘~ 생겨지기</h1>
+		</div>
+	</section>
+
+	<!-- <section class="section" id="section4">
+		<h1>감사합니다</h1>
+		<span class="h-sub"> sherlock @ iropke</span>
+	</section> -->
+
+</div>
+
+<script src="static/js/jquery.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.fullPage.js"></script>
+<script type="text/javascript" src="static/js/examples.js"></script>
+<script type="text/javascript">
+$(function() {
+
+	$('#fullpage').fullpage({
+		verticalCentered: true,
+		scrollingSpeed: 1000,
+		loopBottom: true,
+		afterRender: function(){
+			$('.myVideo01').get(0).play();
+		},
+		afterLoad: function(anchorLink, index){
+			if(index == 2){
+				$('.h').addClass('active');
+				$('.cell').addClass('active');
+			} else {
+				$('.h').removeClass('active');
+				$('.cell').removeClass('active');
+			}
+
+			if(index == 4){
+				$('.myVideo02').get(0).play();
+			} else {
+				$('.myVideo02').get(0).pause();
+			}
+		},
+		onLeave: function(index, direction) {
+			if(index == 4){
+				$('.intro').addClass('active');
+				$('.outro').addClass('active');
+			}
+		}
+	});
+
+});
+</script>
+</body>
+</html>
