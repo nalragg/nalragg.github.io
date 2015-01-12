@@ -1,0 +1,221 @@
+// --------------------------------------------------
+// _global.less : global variables & mixins
+// --------------------------------------------------
+
+// media query
+// --------------------------------------------------
+@portrait:		~"only all and (max-width: 1023px)";
+@mobile_l:		~"only all and (max-width: 767px)";
+@mobile_s:		~"only all and (max-width: 640px)";
+@max600:		~"only all and (max-width: 600px)";
+@mobile:		~"only all and (max-width: 480px)";
+
+@laptop:		~"only all and (min-width: 1280px)";
+@desktop:		~"only all and (min-width: 1440px)";
+@wide:			~"only all and (min-width: 1600px)";
+
+@l-desktop: 12.5%;
+@l-landscape: 9.375%;
+@l-portrait: 7.5%;
+@l-mobile_l: 6.25%;
+@l-mobile: 3.125%;
+
+@w-default: 950px;
+
+@font-default: ~"'Nanum Gothic', '맑은 고딕', 'Malgun Gothic', '돋움', dotum, sans-serif";
+
+// color guide
+// --------------------------------------------------
+
+@white: #fff;
+@smoke: #f5f5f5;	// for bg color
+
+@silver-light: #e5e5e5;
+@silver: #d6d6d6;
+@silver-dark: #ccc;
+
+// @gray-lighter: #999;
+@gray-light: #999;
+@gray: #666;
+@gray-dark: #333;
+
+@ink: #191919;
+@black: #000;
+
+@em: #6f1dea;
+@color-theme: #4b2358;
+@color-em: #71558d;
+
+// mixins
+// --------------------------------------------------
+.inline-block() {
+	display: inline-block; *display: inline; *zoom: 1;
+}
+
+.clearfix() {
+	zoom: 1;
+
+	&:before {
+		content: '';
+		display: block;
+	}
+
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+.ellipsis() {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: normal;
+	display: block;
+}
+
+.ellipsis(@line) { // multiline ellipsis
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: normal;
+	display: -webkit-box;
+	-webkit-line-clamp: @line;
+	-webkit-box-orient: vertical;
+}
+
+.opacity(@value) {
+	@valuePercent: @value * 100;
+	-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{valuePercent})";
+	filter: alpha(opacity=@valuePercent);
+	opacity: @value;
+}
+
+.transition(...) {
+	-webkit-transition: @arguments;
+	   -moz-transition: @arguments;
+	    -ms-transition: @arguments;
+	     -o-transition: @arguments;
+	        transition: @arguments;
+}
+
+.transform(...) {
+	-webkit-transform: @arguments;
+	   -moz-transform: @arguments;
+	    -ms-transform: @arguments;
+	     -o-transform: @arguments;
+	        transform: @arguments;
+}
+
+.shadow(...) {
+	-webkit-box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	box-shadow: @arguments;
+}
+.ms-shadow(@wide, @direction, @color) {
+	-ms-filter: progid:DXImageTransform.Microsoft.Shadow(Strength='@{wide}', Direction='@{direction}', Color='@{color}');
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength='@{wide}', Direction='@{direction}', Color='@{color}');
+}
+
+.box-sizing(@sizing: border-box) {
+	-ms-box-sizing: @sizing;
+	-moz-box-sizing: @sizing;
+	-webkit-box-sizing: @sizing;
+	box-sizing: @sizing;
+}
+
+.bg-gradient(@start, @end, @bg: mix(@start, @end), @end-point: 100%) {
+	background: @bg; // Old browsers
+	background: -moz-linear-gradient(top, @start 0%, @end 100%); // FF3.6+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @start), color-stop(100%, @end)); // Chrome,Safari4+
+	background: -webkit-linear-gradient(top, @start 0%, @end 100%); // Chrome10+,Safari5.1+
+	background: -o-linear-gradient(top, @start 0%, @end 100%); // Opera 11.10+
+	background: -ms-linear-gradient(top, @start 0%, @end 100%); // IE10+
+	background: linear-gradient(to bottom, @start 0%, @end 100%); // W3C
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@{start}', endColorstr='@{end}',GradientType=0); // IE6-9
+}
+
+.bg-gradient(auto, @color, @range: 8%) {
+	.bg-gradient(lighten(@color, @range), darken(@color, @range), @color);
+}
+
+.rgba(@colour, @alpha) {
+    @alphaColour: hsla(hue(@colour), saturation(@colour), lightness(@colour), @alpha);
+    @ieAlphaColour: argb(@alphaColour);
+
+    background-color: @colour; // Fallback for older browsers
+    background-color: @alphaColour;
+
+    // IE hacks
+    zoom: 1; // hasLayout
+    background-color: transparent\9;
+    -ms-filter:  "progid:DXImageTransform.Microsoft.gradient(startColorstr=@{ieAlphaColour}, endColorstr=@{ieAlphaColour})"; // IE 8+
+        filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{ieAlphaColour}, endColorstr=@{ieAlphaColour})"; // IE 6 & 7
+}
+
+.border-radius(@r) {
+	-webkit-border-radius: @r;
+	-moz-border-radius: @r;
+	border-radius: @r;
+}
+
+.cover() {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.display-flex() {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	-o-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+
+
+
+
+// // --------------------------------------------------
+// // media queries
+// // --------------------------------------------------
+
+// // smaller than 1024
+// // --------------------------------------------------
+// // media queries @ pad portrait  ( <= 1023 )
+// @media @portrait {
+
+// }/*/media query*/
+
+
+// // media queries @ mobile landspcape  ( <= 767 )
+// @media @mobile_l {
+
+// }/*/media query*/
+
+
+// // media queries @ mobile ( <= 480 )
+// @media @mobile {
+
+// }/*/media query*/
+
+
+// // bigger than 1024
+// // --------------------------------------------------
+// // media queries @ laptop ( >= 1280 )
+// @media @laptop {
+
+// }/*/media query*/
+
+
+// // media queries @ wide ( >= 1440 )
+// @media @wide {
+
+// }/*/media query*/
