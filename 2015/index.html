@@ -44,17 +44,17 @@ _\ _ `   \ `_  |  ___/| |  | | (__) | (___|   \__ | | | (_) |  __/| \ \__|    __
 	<section class="section" id="section1">
 		<section class="slide" id="slide1">
 			<div class="layer">
-				<h1 class="h">2015 rough Plan</h1>
+				<h1 class="h">rough plan 2015</h1>
 			</div>
 	    </section>
 	    <section class="slide" id="slide2">
 			<div class="layer">
-				<h1 class="h">운동</h1>
+				<h1 class="h">운동 ~_~</h1>
 			</div>
 	    </section>
 	    <section class="slide" id="slide3">
 			<div class="layer">
-				<h1 class="h">Independent Film</h1>
+				<h1 class="h">독립영화제</h1>
 			</div>
 	    </section>
 	    <section class="slide" id="slide4">
@@ -65,7 +65,7 @@ _\ _ `   \ `_  |  ___/| |  | | (__) | (___|   \__ | | | (_) |  __/| \ \__|    __
 	</section>
 
 	<section class="section" id="section2">
-		<h1>1만 시간</h1>
+		<h1>-</h1>
 	</section>
 
 
@@ -92,6 +92,8 @@ _\ _ `   \ `_  |  ___/| |  | | (__) | (___|   \__ | | | (_) |  __/| \ \__|    __
 $(function() {
 
 	$('#fullpage').fullpage({
+		controlArrows: false,
+		slidesNavigation: true,
 		verticalCentered: true,
 		scrollingSpeed: 1000,
 		loopBottom: true,
@@ -99,18 +101,23 @@ $(function() {
 			$('.myVideo01').get(0).play();
 		},
 		afterLoad: function(anchorLink, index){
-			if(index == 2){
-				$('.h').addClass('active');
-				$('.cell').addClass('active');
-			} else {
-				$('.h').removeClass('active');
-				$('.cell').removeClass('active');
-			}
+			// if(index == 2){
+			// 	$('.h').addClass('active');
+			// 	$('.cell').addClass('active');
+			// } else {
+			// 	$('.h').removeClass('active');
+			// 	$('.cell').removeClass('active');
+			// }
 
 			if(index == 4){
 				$('.myVideo02').get(0).play();
 			} else {
 				$('.myVideo02').get(0).pause();
+			}
+		},
+		onSlideLeave: function(anchorLink, index, slideIndex, direction) {
+			if (index == 2 && slideIndex == 3 && direction == 'left') {
+				$('#fullpage').fullpage.moveSectionDown();
 			}
 		},
 		onLeave: function(index, direction) {
