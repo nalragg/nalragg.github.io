@@ -222,11 +222,6 @@ html, body {
     width: 960px;
     position: relative;
 }
-h1{
-    font-size: 12em;
-    color: #fff;
-    background: rgba(000, 000, 000, 0.5);
-}
 p{
     font-size: 2em;
 }
@@ -255,7 +250,7 @@ p{
     background-position: center center;
     background-size: contain;
     object-fit: cover; /*cover video background */
-    z-index:3;
+    z-index:1;
 }
 
 /* Centered texts in each section
@@ -271,7 +266,20 @@ p{
     top: 50%;
     margin-top: -90px;
 }
-
+.section .layer h1 {
+    font-size: 12em;
+    color: #fff;
+    background: rgba(000, 000, 000, 0.5);
+}
+.full-layer h1 {
+    font-size: 20em;
+    color: #fff;
+    opacity: .7;
+    padding: 0 5%;
+}
+.full-layer h1 span {
+    display: inline-block;
+}
 .intro.active {
     display: none;
 }
@@ -308,20 +316,13 @@ p{
 }
 
 #section1 #slide2 {
-    background-image: url(../img/bg_exercise.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#section1 #slide3 {
     background-image: url(../img/bg_movie.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-#section1 #slide4 {
+#section1 #slide3 {
     background-image: url(../img/bg_challenge.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -331,9 +332,9 @@ p{
     opacity: 1;
 }
 
-#section2 {
-    background-image: url(../img/bg_time.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+.myAudio {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
 }

@@ -25,7 +25,7 @@ _\ _ `   \ `_  |  ___/| |  | | (__) | (___|   \__ | | | (_) |  __/| \ \__|    __
 <div id="fullpage">
 
 	<section class="section" id="section0">
-		<video autoplay loop muted controls="true" id="myVideo" class="myVideo01">
+		<video autoplay loop muted id="myVideo" class="myVideo01">
 			<source src="static/img/LUV.mp4" type="video/mp4">
 			<source src="static/img/LUV.webm" type="video/webm">
 		</video>
@@ -49,52 +49,52 @@ _\ _ `   \ `_  |  ___/| |  | | (__) | (___|   \__ | | | (_) |  __/| \ \__|    __
 	    </section>
 	    <section class="slide" id="slide2">
 			<div class="layer">
-				<h1 class="h">꾸준</h1>
+				<h1 class="h">추진</h1>
 			</div>
 	    </section>
 	    <section class="slide" id="slide3">
 			<div class="layer">
-				<h1 class="h">추진</h1>
-			</div>
-	    </section>
-	    <section class="slide" id="slide4">
-			<div class="layer">
-				<h1 class="h">도전</h1>
+				<h1 class="h">놀이</h1>
 			</div>
 	    </section>
 	</section>
 
 	<section class="section" id="section2">
-		<video loop muted controls="true" id="myVideo" class="myVideo02">
-			<source src="static/img/witness.mp4" type="video/mp4">
-			<source src="static/img/witness.webm" type="video/webm">
+		<video loop muted id="myVideo" class="myVideo02">
+			<source src="static/img/fly.mp4" type="video/mp4">
+			<source src="static/img/fly.webm" type="video/webm">
 		</video>
-		<div class="layer">
-			<h1>치열하게</h1>
-		</div>
+		<audio loop controls="controls" class="myAudio">
+		  <source src="static/img/fly.ogg" type="audio/ogg">
+		  <source src="static/img/fly.mp3" type="audio/mpeg">
+		</audio>
+		<section class="slide" id="slide1">
+			<div class="layer">
+				<h1>치열하게</h1>
+			</div>
+		</section>
+		<section class="slide" id="slide2">
+			<div class="layer">
+				<h1>핸섬하게</h1>
+			</div>
+		</section>
+		<section class="slide" id="slide3">
+			<div class="full-layer">
+				<h1><span>시선을 비틀면</span> <span>세상은 더</span> 자유롭다</h1>
+			</div>
+		</section>
 	</section>
-
-
-	<section class="section" id="section3">
-		<video loop muted controls="true" id="myVideo" class="myVideo03">
-			<source src="static/img/cf.mp4" type="video/mp4">
-			<source src="static/img/cf.webm" type="video/webm">
-		</video>
-		<div class="layer">
-			<h1>핸섬하게</h1>
-		</div>
-	</section>
-
 </div>
 
-<script src="static/js/jquery.min.js"></script>
-<script type="text/javascript" src="static/js/jquery.fullPage.js"></script>
+<script src="static/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.fullPage.min.js"></script>
+<script type="text/javascript" src="static/js/audio.min.js"></script>
 <script type="text/javascript">
 $(function() {
 
 	$('#fullpage').fullpage({
 		controlArrows: false,
-		slidesNavigation: true,
+		slidesNavigation: false,
 		verticalCentered: true,
 		scrollingSpeed: 1000,
 		loopBottom: true,
@@ -102,33 +102,24 @@ $(function() {
 			$('.myVideo01').get(0).play();
 		},
 		afterLoad: function(anchorLink, index){
-			// if(index == 2){
-			// 	$('.h').addClass('active');
-			// 	$('.cell').addClass('active');
-			// } else {
-			// 	$('.h').removeClass('active');
-			// 	$('.cell').removeClass('active');
-			// }
-
-			if(index == 3){
+			if(index == 3 || index == 4){
 				$('.myVideo02').get(0).play();
+				$('.myAudio').get(0).play();
 			} else {
 				$('.myVideo02').get(0).pause();
 			}
-
-			if(index == 4){
-				$('.myVideo03').get(0).play();
-			} else {
-				$('.myVideo03').get(0).pause();
-			}
 		},
 		onSlideLeave: function(anchorLink, index, slideIndex, direction) {
-			if (index == 2 && slideIndex == 3 && direction == 'left') {
+			if (index == 2 && slideIndex == 2 && direction == 'left') {
+				$('#fullpage').fullpage.moveSectionDown();
+			}
+			if (index == 3 && slideIndex == 2 && direction == 'left') {
 				$('#fullpage').fullpage.moveSectionDown();
 			}
 		},
 		onLeave: function(index, direction) {
-			if(index == 4){
+
+			if (index == 3){
 				$('.intro').addClass('active');
 				$('.outro').addClass('active');
 			}
