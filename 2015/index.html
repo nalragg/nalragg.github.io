@@ -64,7 +64,7 @@ _\ _ `   \ `_  |  ___/| |  | | (__) | (___|   \__ | | | (_) |  __/| \ \__|    __
 			<source src="static/img/fly.mp4" type="video/mp4">
 			<source src="static/img/fly.webm" type="video/webm">
 		</video>
-		<audio loop controls="controls" class="myAudio">
+		<audio loop controls="controls" id="myAudio" class="myAudio">
 		  <source src="static/img/fly.ogg" type="audio/ogg">
 		  <source src="static/img/fly.mp3" type="audio/mpeg">
 		</audio>
@@ -88,7 +88,6 @@ _\ _ `   \ `_  |  ___/| |  | | (__) | (___|   \__ | | | (_) |  __/| \ \__|    __
 
 <script src="static/js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="static/js/jquery.fullPage.min.js"></script>
-<script type="text/javascript" src="static/js/audio.min.js"></script>
 <script type="text/javascript">
 $(function() {
 
@@ -105,6 +104,7 @@ $(function() {
 			if(index == 3 || index == 4){
 				$('.myVideo02').get(0).play();
 				$('.myAudio').get(0).play();
+				$(".myAudio").prop('volume', 0.5);
 			} else {
 				$('.myVideo02').get(0).pause();
 			}

@@ -331,10 +331,18 @@ p{
 #section1 .slide.active {
     opacity: 1;
 }
-
 .myAudio {
     position: absolute;
     bottom: 0;
     right: 0;
     z-index: 10;
+    opacity: 0;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+}
+.myAudio:hover {
+    opacity: 1;
 }
