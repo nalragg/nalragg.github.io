@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="static/css/style.css" />
 </head>
 <body>
+
 	<div class="instagram">
 	  <a href="#" class="thumb">
 	    <img src="http://ts.daumcdn.net/custom/blog/153/1534230/skin/images/rit.jpg" alt="">
@@ -41,11 +42,12 @@ $(function() {
 			'top' : '',
 			'left': ''
 		});
+
 		$(this).find('.thumb-input').css({
 			'display' : 'block',
 			'top' : event.pageY,
 			'left': event.pageX
-		});
+		}).focus();
 	});
 });
 </script>
