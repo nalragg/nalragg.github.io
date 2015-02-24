@@ -34,20 +34,26 @@
 <script type="text/javascript">
 $(function() {
 
+	var $textBox = ('.thumb-input');
+
 	$('.thumb').on('click', function(event){
 		event.preventDefault();
 
-		$('.thumb-input').css({
+
+		$($textBox).css({
 			'display' : 'none',
 			'top' : '',
 			'left': ''
 		});
 
-		$(this).find('.thumb-input').css({
+		$(this).find($textBox).fadeToggle().css({
 			'display' : 'block',
 			'top' : event.pageY,
 			'left': event.pageX
-		}).focus();
+		}).focus().on('click', function(event){
+			event.preventDefault();
+			event.stopPropagation();
+		});
 	});
 });
 </script>
