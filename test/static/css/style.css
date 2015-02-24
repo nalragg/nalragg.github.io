@@ -59,6 +59,11 @@ html, body {
 body {
   background: #f1f1f1;
   text-align: center;
+  padding: 100px 0;
+}
+
+.instagram {
+    display: inline-block;
 }
 
 .thumb {
