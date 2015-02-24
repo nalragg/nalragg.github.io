@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<title>2015VB - SHERLOCK</title>
+<meta name="author" content="Alvaro Trigo Lopez" />
+<meta name="description" content="fullPage full-screen backgrounds." />
+<meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,backgrounds,full-screen" />
+<meta name="Resource-type" content="Document" />
+<link rel="stylesheet" type="text/css" href="static/css/style.css" />
+</head>
+<body>
+	<div class="instagram">
+	  <a href="#" class="thumb">
+	    <img src="http://ts.daumcdn.net/custom/blog/153/1534230/skin/images/rit.jpg" alt="">
+	    <input type="text" class="thumb-input">
+	  </a>
+	</div>
+	<div class="instagram">
+	  <a href="#" class="thumb">
+	    <img src="http://ts.daumcdn.net/custom/blog/153/1534230/skin/images/rit.jpg" alt="">
+	    <input type="text" class="thumb-input">
+	  </a>
+	</div>
+	<div class="instagram">
+	  <a href="#" class="thumb">
+	    <img src="http://ts.daumcdn.net/custom/blog/153/1534230/skin/images/rit.jpg" alt="">
+	    <input type="text" class="thumb-input">
+	  </a>
+	</div>
+
+<script src="static/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+$(function() {
+
+	$('.thumb').on('click', function(event){
+		event.preventDefault();
+
+		$('.thumb-input').css({
+			'display' : 'none',
+			'top' : '',
+			'left': ''
+		});
+		$(this).find('.thumb-input').css({
+			'display' : 'block',
+			'top' : event.pageY,
+			'left': event.pageX
+		});
+	});
+});
+</script>
+</body>
+</html>
