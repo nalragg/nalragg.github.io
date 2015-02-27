@@ -1,0 +1,62 @@
+@import "_global.less";		// variables & mixins
+
+// --------------------------------------------------
+// _layout.less : layout & common section style
+// --------------------------------------------------
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/NanumGothic.eot);
+  src: local('Apple SD Gothic Neo'),
+  	   url(./fonts/NanumGothic.eot?#iefix) format('embedded-opentype'),
+       url(./fonts/NanumGothic.woff) format('woff'),
+       url(./fonts/NanumGothic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'UbuntuTitling-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url(./fonts/UbuntuTitling-Bold.eot);
+  src: local('Apple SD Gothic Neo'),
+  	   url(./fonts/UbuntuTitling-Bold.eot?#iefix) format('embedded-opentype'),
+       url(./fonts/UbuntuTitling-Bold.woff) format('woff'),
+       url(./fonts/UbuntuTitling-Bold.ttf) format('truetype');
+}
+
+body, input, textarea, select, button {
+  font-family: @font-default;
+}
+
+
+/*  header
+ * -------------------------------------------------- */
+
+/*  main area
+ * -------------------------------------------------- */
+
+/*  layout
+ * -------------------------------------------------- */
+.l-wrap {
+	max-width: @w-default;
+	padding: 0 @l-landscape;
+	margin: 0 auto;
+
+	@media @portrait {
+		padding: 0 @l-portrait;
+	}
+
+	@media @mobile_l {
+		padding: 0 @l-mobile_l;
+	}
+
+	@media @mobile {
+		padding: 0 @l-mobile;
+	}
+
+	@media @laptop {
+		padding: 0 @l-desktop;
+	}
+}
