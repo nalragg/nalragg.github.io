@@ -5,17 +5,6 @@ $(function(){
 
     $(window).load(function(){
 
-        // if ( Modernizr.touch ) {
-        //     var s = skrollr.init();
-        //     s.destroy();
-
-        // } else {
-        //     var parallax = skrollr.init({
-        //         forceHeight: false,
-        //         smoothScrolling: true,
-        //         smoothScrollingDuration: 400
-        //     });
-        // }
         var parallax = skrollr.init({
             forceHeight: false,
             smoothScrolling: true,
