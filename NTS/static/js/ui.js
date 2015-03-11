@@ -7,7 +7,7 @@ $(function(){
 
         if ( Modernizr.touch ) {
             var s = skrollr.init();
-            s.destroy();
+            // s.destroy();
 
         } else {
             var parallax = skrollr.init({
