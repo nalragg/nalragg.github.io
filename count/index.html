@@ -99,18 +99,18 @@ var myApp = angular.module('myApp', ['countTo']),
 
 	myApp.controller('demoController', funCount);
 
-	$(function(){
-		$('.counting').each(function () {
-			var $this = $(this);
-			$({ Counter: 0 }).animate({ Counter: $this.text() }, {
-				duration: 4000,
-				easing: 'swing',
-				step: function () {
-					$this.text(Math.ceil(this.Counter));
-				}
-			});
+$(function(){
+	$('.counting').each(function () {
+		var $this = $(this);
+		$({ Counter: 0 }).animate({ Counter: $this.text() }, {
+			duration: 4000,
+			easing: 'swing',
+			step: function () {
+				$this.text(Math.ceil(this.Counter));
+			}
 		});
 	});
+});
 </script>
 </body>
 </html>

@@ -19,9 +19,16 @@ body {
   max-width: 980px;
   z-index: 100;
 }
-.header .logo {
-  float: left;
-  padding: 20px 10px;
+.header .h1 {
+  padding: 10px 0;
+  font-size: 1em;
+  color: #ffcb08;
+  text-align: center;
+}
+@media only all and (max-width: 480px) {
+  .header .h1 {
+    display: none;
+  }
 }
 .footer {
   overflow: hidden;
@@ -138,7 +145,7 @@ body {
   *zoom: 1;
   word-spacing: 0;
 }
-.section-intro .info .num {
+.section-intro .info .ubuntu {
   font-size: 3em;
   line-height: 1.2;
 }
@@ -163,7 +170,7 @@ body {
 .section-intro .intro-title .title {
   font-size: 1.44em;
 }
-.section-intro .intro-title .num {
+.section-intro .intro-title .ubuntu {
   font-size: 5.55em;
   line-height: 1.2;
 }
@@ -176,7 +183,7 @@ body {
   text-align: center;
 }
 .section-letters .letters-view {
-  padding: 4.8% 0;
+  padding: 6.8% 0;
 }
 .section-letters .h {
   color: #ffcb08;
@@ -239,13 +246,27 @@ body {
   display: block;
   max-width: 960px;
 }
+.section-portfolio .portfolio-item img {
+  -webkit-transition: transform 1.5s cubic-bezier(0.2, 0.4, 0.4, 0.9);
+  -moz-transition: transform 1.5s cubic-bezier(0.2, 0.4, 0.4, 0.9);
+  -ms-transition: transform 1.5s cubic-bezier(0.2, 0.4, 0.4, 0.9);
+  -o-transition: transform 1.5s cubic-bezier(0.2, 0.4, 0.4, 0.9);
+  transition: transform 1.5s cubic-bezier(0.2, 0.4, 0.4, 0.9);
+}
 .section-portfolio .portfolio-item:hover .cover {
-  top: 50%;
+  top: 100%;
+}
+.section-portfolio .portfolio-item:hover > img {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
 }
 .section-portfolio .cover {
   overflow: hidden;
   position: absolute;
-  top: 100%;
+  top: 50%;
   left: 0;
   width: 100%;
   height: 50%;
@@ -255,11 +276,11 @@ body {
   font-size: .8em;
   text-align: center;
   z-index: 10;
-  -webkit-transition: top 0.2s cubic-bezier(0.2, 0.4, 0.4, 0.9);
-  -moz-transition: top 0.2s cubic-bezier(0.2, 0.4, 0.4, 0.9);
-  -ms-transition: top 0.2s cubic-bezier(0.2, 0.4, 0.4, 0.9);
-  -o-transition: top 0.2s cubic-bezier(0.2, 0.4, 0.4, 0.9);
-  transition: top 0.2s cubic-bezier(0.2, 0.4, 0.4, 0.9);
+  -webkit-transition: top 1s cubic-bezier(0.2, 0.4, 0.4, 0.9);
+  -moz-transition: top 1s cubic-bezier(0.2, 0.4, 0.4, 0.9);
+  -ms-transition: top 1s cubic-bezier(0.2, 0.4, 0.4, 0.9);
+  -o-transition: top 1s cubic-bezier(0.2, 0.4, 0.4, 0.9);
+  transition: top 1s cubic-bezier(0.2, 0.4, 0.4, 0.9);
 }
 .section-portfolio .cover-desc {
   padding: 3% 5%;
@@ -295,6 +316,14 @@ body {
   color: #ffcb08;
   background-color: #241909;
   background-image: url(../images/a/bg_pattern_w.png);
+}
+.section-about-aspiration .effect {
+  border-bottom-color: #ffcb08;
+  -webkit-text-shadow: 0px 0px 2px #ffcb08;
+  -moz-text-shadow: 0px 0px 2px #ffcb08;
+  -ms-text-shadow: 0px 0px 2px #ffcb08;
+  -o-text-shadow: 0px 0px 2px #ffcb08;
+  text-shadow: 0px 0px 2px #ffcb08;
 }
 .section-about .h {
   font-size: 2.66em;
@@ -435,7 +464,7 @@ body {
   text-align: center;
 }
 .section-portfolio .bx-wrapper .bx-controls {
-  bottom: -12%;
+  bottom: -8%;
 }
 .bx-wrapper .bx-pager-item {
   display: inline-block;
@@ -464,12 +493,12 @@ body {
 }
 @media only all and (max-width: 767px) {
   .section-portfolio .bx-wrapper .bx-controls {
-    bottom: -15%;
-    -webkit-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-    -ms-transform: scale(0.5);
-    -o-transform: scale(0.5);
-    transform: scale(0.5);
+    bottom: -35px;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+    -o-transform: scale(0.75);
+    transform: scale(0.75);
     -webkit-transform-origin: center center;
     -moz-transform-origin: center center;
     -ms-transform-origin: center center;
@@ -477,7 +506,7 @@ body {
     transform-origin: center center;
   }
 }
-.num {
+.ubuntu {
   display: block;
   font-family: 'UbuntuTitling-Bold', 'Nanum Gothic', '맑은 고딕', 'Malgun Gothic', '돋움', dotum, sans-serif;
 }

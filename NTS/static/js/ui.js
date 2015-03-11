@@ -1,115 +1,45 @@
 /*
- * Project : @iropke in sherlock
- * fileName : ui.js
- * This file includes plugins and custom functions.
+ * @author : @iropke in sherlock
 */
+$(function(){
 
-/*
-* Copyright 2011 Nicholas C. Zakas. All rights reserved.
-* Licensed under BSD License.
-* https://gist.github.com/nzakas/08602e7d2ee448be834c
-*/
-// matchMedia polyfill (e.g. ie9)
-var isMedia = (function(){
+    $(window).load(function(){
 
-    if ( window.matchMedia ) {
-        return function(query) {
-            return window.matchMedia(query).matches;
+        if ( Modernizr.touch ) {
+            var s = skrollr.init();
+            s.destroy();
+
+        } else {
+            var parallax = skrollr.init({
+                forceHeight: false,
+                smoothScrolling: true,
+                smoothScrollingDuration: 400
+            });
         }
 
+    });
+
+    if ( Modernizr.touch ) {
+        $('.tubular-thumb').on('click', function(event){
+            $(this).ytiframe();
+            event.preventDefault();
+        });
     } else {
-
-        var div;
-
-        return function(query){
-            if (!div){
-                div = document.createElement("div");
-                div.id = "ncz1";
-                div.style.cssText = "position:absolute;top:-1000px";
-                document.body.insertBefore(div, document.body.firstChild);
-            }
-
-            div.innerHTML = "_<style media=\"" + query + "\"> #ncz1 { width: 1px; }</style>";
-            div.removeChild(div.firstChild);
-            return div.offsetWidth == 1;
-        };
+        $('#full-youtube-video-container').tubular({videoId: 'U04Iri51KSI'});
     }
 
-})();
+    $('.ahchor-empty').on('click', function(event){
+        event.preventDefault();
+    });
 
-/**
- * toggleLayer, simpleTab, swapTab, placeholder(polyfill), accordion, animateChart
- */
-(function($) {
-
-    // placeholder polyfill
-    $.fn.placeholder = function() {
-
-        function hasPlaceholderSupport() {
-            var i = document.createElement('input');
-            return 'placeholder' in i;
-        }
-
-        return this.each(function(i, el){
-            var $el = $(el),
-                $fake,
-                holder = $el.attr('placeholder'),
-                is_password = $el.is('[type=password]');
-
-            if( hasPlaceholderSupport() ) return;
-
-            if ( is_password ) {
-                $fake = $('<input />', {
-                    className: $el.attr('class'),
-                    type: 'text',
-                    value: holder
-                });
-                $fake.appendTo( $el.parent() );
-                $el.hide();
-
-                $fake.on({
-                    focus: function() {
-                        showFakeInput();
-                        $el.focus();
-                    }
-                });
-                $el.on({
-                    focus: showFakeInput,
-                    blur: function() {
-                        if ( $el.val() == '' ) {
-                            $fake.css('display', '');
-                            $el.hide();
-                        }
-                    }
-                });
-
-            } else {
-                setPlaceholder();
-                $el.on({
-                    focus: function() {
-                        if ( $el.val() == holder ) {
-                            $el.val('').removeClass('placeholder');
-                        }
-                    },
-                    blur: setPlaceholder
-                });
-            }
-
-            function showFakeInput() {
-                $fake.hide();
-                $el.css('display', '');
-            }
-
-            function setPlaceholder() {
-                if ( $el.val() == '' ) {
-                    $el.val(holder).addClass('placeholder');
-                }
-            }
-        });
-    };
-
-})(jQuery);
-
+    $('.section-portfolio-item').bxSlider({
+        // auto: true,
+        speed: 1200,
+        controls: false,
+        slideWidth: 960,
+        infiniteLoop: false
+    });
+});
 
 /**
  * ytiframe
