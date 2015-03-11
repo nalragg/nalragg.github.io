@@ -31,32 +31,12 @@ body {
   }
 }
 .footer {
-  overflow: hidden;
   padding: 40px 0;
   color: #ffffff;
   background: #191919;
   border-top: 10px solid #333333;
   border-bottom: 10px solid #333333;
   font-size: 13px;
-}
-.footer-area {
-  float: left;
-}
-.footer .common-logo {
-  float: right;
-}
-.footer ul {
-  overflow: hidden;
-  margin: 4px 0;
-}
-.footer ul li {
-  float: left;
-}
-.footer ul li + li {
-  margin-left: 10px;
-}
-.footer a {
-  color: #000000;
 }
 .gnb {
   padding: 20px 0;
