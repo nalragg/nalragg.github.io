@@ -611,6 +611,23 @@ body {
 	}
 }
 
+.skrollable {
+	position:fixed;
+	z-index:100;
+}
+
+.skrollr-mobile .skrollable {
+	position:absolute;
+}
+
+.skrollable .skrollable {
+	position:absolute;
+}
+
+.skrollable .skrollable .skrollable {
+	position:static;
+}
+
 @-webkit-keyframes blink {
 	0%   {-webkit-transform: scale(1); opacity: 1;}
 	100% {-webkit-transform: scale(1.5); opacity: 0;}
