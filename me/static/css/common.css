@@ -456,6 +456,13 @@ button {
   width: 137.5px;
   height: 50px;
 }
+.header.is-fixed .h1:after {
+  -webkit-animation: run-flot 3s linear infinite;
+  -moz-animation: run-flot 3s linear infinite;
+  -ms-animation: run-flot 3s linear infinite;
+  -o-animation: run-flot 3s linear infinite;
+  animation: run-flot 3s linear infinite;
+}
 @media only all and (max-width: 480px) {
   .header .h1 {
     display: none;

@@ -488,11 +488,11 @@ body {
 			a {
 				position: relative;
 				display: block;
-				width: 50px;
+				width: 70px;
 				height: 40px;
-				margin: 0 10px;
+				margin: 0 25px;
 				background-image: url(../images/a/icons.png);
-				background-position: -275px -75px;
+				background-position: -265px -75px;
 				background-repeat: no-repeat;
 				text-indent: -9999%;
 				.opacity(.7);
@@ -500,12 +500,12 @@ body {
 				&:after {
 					content: '';
 					position: absolute;
-					top: -32px;
-					left: -10px;
-					width: 66px;
+					top: -34px;
+					left: 0;
+					width: 65px;
 					height: 60px;
 					background-image: url(../images/a/icons.png);
-					background-position: -265px -10px;
+					background-position: -265px -8px;
 					background-repeat: no-repeat;
 					.transform-origin(50% 50%);
 					.transition(all 1s ease-in-out);
@@ -579,6 +579,38 @@ body {
 @keyframes blink {
 	0%   {transform: scale(1); opacity: 1;}
 	100% {transform: scale(1.5); opacity: 0;}
+}
+
+@-webkit-keyframes run-flot {
+	0%   {right: 0}
+	25%  {right: -5px}
+	50%  {right: 0}
+	75%  {right: 5px}
+	100% {right: 0}
+}
+
+@-moz-keyframes run-flot {
+	0%   {right: 0}
+	25%  {right: -5px}
+	50%  {right: 0}
+	75%  {right: 5px}
+	100% {right: 0}
+}
+
+@-o-keyframes run-flot {
+	0%   {right: 0}
+	25%  {right: -5px}
+	50%  {right: 0}
+	75%  {right: 5px}
+	100% {right: 0}
+}
+
+@keyframes run-flot {
+	0%   {right: 0}
+	25%  {right: -5px}
+	50%  {right: 0}
+	75%  {right: 5px}
+	100% {right: 0}
 }
 
 @-webkit-keyframes run-rotate {
