@@ -422,7 +422,29 @@ button {
   top: 0;
   bottom: 0;
   left: 30px;
-  width: 282px;
+  width: 165px;
+  height: 60px;
+  margin: auto;
+  padding-left: 56px;
+  padding-right: 77px;
+}
+.header .h1:before,
+.header .h1:after {
+  position: absolute;
+}
+.header .h1:before {
+  content: url('../images/a/logo_before.png');
+  left: 0;
+  bottom: 0;
+  width: 46px;
+  height: 43px;
+}
+.header .h1:after {
+  content: url('../images/a/logo_after.png');
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 67px;
   height: 68px;
   margin: auto;
 }
@@ -431,8 +453,8 @@ button {
   background-color: rgba(0, 0, 0, 0.5);
 }
 .header.is-fixed .h1 {
-  width: 235px;
-  height: 56.66666667px;
+  width: 137.5px;
+  height: 50px;
 }
 @media only all and (max-width: 480px) {
   .header .h1 {

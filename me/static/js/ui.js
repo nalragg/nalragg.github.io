@@ -50,7 +50,7 @@ $(function(){
     });
 
     $('.section-portfolio-slider').bxSlider({
-        auto: true,
+        // auto: true,
         // mode: 'fade',
         speed: 1200,
         controls: false,
