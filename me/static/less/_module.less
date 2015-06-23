@@ -46,9 +46,50 @@ sup {
 	}
 }
 
+
+// icon
+// --------------------------------------------------
+.icon {
+	.inline-block();
+	background-image: url(../images/a/icons.png);
+	background-repeat: no-repeat;
+	vertical-align: top;
+
+	&&-man {
+		width: 100px;
+		height: 100px;
+		background-position: -100px 0;
+	}
+	&&-html {
+		width: 100px;
+		height: 100px;
+		background-position: 0 0;
+	}
+	&&-css {
+		width: 100px;
+		height: 100px;
+		background-position: 0 -100px;
+	}
+	&&-js {
+		width: 100px;
+		height: 100px;
+		background-position: 0 -200px;
+	}
+	&&-rwd {
+		width: 100px;
+		height: 100px;
+		background-position: 0 -300px;
+	}
+	&&-quote {
+		width: 50px;
+		height: 50px;
+		background-position: -340px 0;
+	}
+}
+
+
 // button
 // --------------------------------------------------
-
 .btn {
 	.inline-block();
 	overflow: hidden;
@@ -150,7 +191,6 @@ sup {
 
 // player
 // --------------------------------------------------
-
 .flexible-obj .video-player {
 	position: absolute;
 	top: 0;

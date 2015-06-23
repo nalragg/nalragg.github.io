@@ -19,7 +19,7 @@
     // defaults
     var defaults = {
         ratio: 16/9, // usually either 4/3 or 16/9 -- tweak as needed
-        videoId: 'ZCAnLxRvNNc', // toy robot in space is a good default, no?
+        videoId: '', // toy robot in space is a good default, no?
         mute: true,
         repeat: true,
         width: $(window).width(),
@@ -37,7 +37,7 @@
 
     var tubular = function(node, options) { // should be called on the wrapper div
         var options = $.extend({}, defaults, options),
-            $body = $('#full-youtube-video-container') // cache body node
+            $body = $('#video-player') // cache body node
             $node = $(node); // cache wrapper node
 
         // build container

@@ -96,14 +96,8 @@ body, input, textarea, select, button {
             height: 60px/1.2;
 
             &:after {
-                .animation(run-flot 3s linear infinite);
+                .animation(run-flot 2s linear infinite);
             }
-        }
-    }
-
-    @media @mobile {
-        .h1 {
-            display: none;
         }
     }
 }
@@ -138,6 +132,7 @@ body, input, textarea, select, button {
         position: relative;
         width: 30px;
         height: 3px;
+        margin-top: -7px;
         background: @white;
         vertical-align: middle;
         &:extend(.transition);

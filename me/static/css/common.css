@@ -191,12 +191,12 @@ audio:not([controls]) {
   display: none;
 }
 ::-moz-selection {
-  background: gold;
+  background: #f06da1;
   color: #fff;
   text-shadow: none;
 }
 ::selection {
-  background: gold;
+  background: #f06da1;
   color: #fff;
   text-shadow: none;
 }
@@ -457,16 +457,11 @@ button {
   height: 50px;
 }
 .header.is-fixed .h1:after {
-  -webkit-animation: run-flot 3s linear infinite;
-  -moz-animation: run-flot 3s linear infinite;
-  -ms-animation: run-flot 3s linear infinite;
-  -o-animation: run-flot 3s linear infinite;
-  animation: run-flot 3s linear infinite;
-}
-@media only all and (max-width: 480px) {
-  .header .h1 {
-    display: none;
-  }
+  -webkit-animation: run-flot 2s linear infinite;
+  -moz-animation: run-flot 2s linear infinite;
+  -ms-animation: run-flot 2s linear infinite;
+  -o-animation: run-flot 2s linear infinite;
+  animation: run-flot 2s linear infinite;
 }
 .gnb {
   padding: 20px 0;
@@ -497,6 +492,7 @@ button {
   position: relative;
   width: 30px;
   height: 3px;
+  margin-top: -7px;
   background: #ffffff;
   vertical-align: middle;
 }
@@ -642,6 +638,44 @@ sup {
 }
 .colorizeHover .img-wrapper img {
   width: 100%;
+}
+.icon {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  background-image: url(../images/a/icons.png);
+  background-repeat: no-repeat;
+  vertical-align: top;
+}
+.icon.icon-man {
+  width: 100px;
+  height: 100px;
+  background-position: -100px 0;
+}
+.icon.icon-html {
+  width: 100px;
+  height: 100px;
+  background-position: 0 0;
+}
+.icon.icon-css {
+  width: 100px;
+  height: 100px;
+  background-position: 0 -100px;
+}
+.icon.icon-js {
+  width: 100px;
+  height: 100px;
+  background-position: 0 -200px;
+}
+.icon.icon-rwd {
+  width: 100px;
+  height: 100px;
+  background-position: 0 -300px;
+}
+.icon.icon-quote {
+  width: 50px;
+  height: 50px;
+  background-position: -340px 0;
 }
 .btn {
   display: inline-block;

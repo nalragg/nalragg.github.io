@@ -42,7 +42,10 @@ $(function(){
             event.preventDefault();
         });
     } else {
-        $('#full-youtube-video-container').tubular({videoId: 'U04Iri51KSI'});
+        $('#full-youtube-video-container').tubular({
+            videoId: 'U04Iri51KSI',
+            start: 10
+        });
     }
 
     $('.ahchor-empty').on('click', function(event){
