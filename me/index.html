@@ -25,12 +25,9 @@
 			<!-- <h1 class="h">COMING UP NEXT <span>NALRA</span></h1>
 			<p><i class="effect">TEST</i></p> -->
 
-			<div class="luffy stance-run"></div>
-			<div class="luffy stance-punch"></div>
-			<div class="luffy stance-gomugomu"></div>
-			<div class="luffy stance-kick"></div>
-			<div class="luffy stance-breathing"></div>
-			<div class="luffy stance-jump"></div>
+			<div class="char-box">
+				<div id="luffy" class="luffy"></div>
+			</div>
 		</div>
 	</section>
 
@@ -80,7 +77,8 @@
 <script>
 $(function(){
 
-	var $videoPlayer = $('#video-player');
+	var $videoPlayer = $('#video-player'),
+		$Luffy = $('#luffy');
 
 	var regExp = /^.*(youtu.be\/|v\/|e\/|u\/\w+\/|embed\/|v=)([^#\&\?]*).*/;
 
@@ -95,6 +93,68 @@ $(function(){
 			videoId: elId
 		});
 	});
+
+	var tl = new TimelineLite();
+
+	tl.set( $Luffy, {
+		y: '-200%'
+	}).set( $Luffy.parent('.char-box'), {
+		x: '30%'
+	}).to( $Luffy, 1.5, {
+		delay: 2,
+		y: '0%',
+		ease: Back.easeIn,
+		className: '+=stance-jump',
+		onComplete: function(){
+			returnClass();
+		}
+	}).to( $Luffy, 2, {
+		className: '+=stance-run',
+		ease : Linear,
+		onComplete: function(){
+			returnClass();
+		}
+	}).to( $Luffy.parent('.char-box'), 2, {
+		delay: -2,
+		x: '0%',
+		ease : Power1.easeIn
+	}).to( $Luffy, 1.8, {
+		className: '+=stance-punch',
+		ease : Linear,
+		onComplete: function(){
+			returnClass();
+		}
+	}).to( $Luffy, 3, {
+		className: '+=stance-gomugomu',
+		ease : Linear,
+		onComplete: function(){
+			returnClass();
+		}
+	}).to( $Luffy, 1.6, {
+		className: '+=stance-kick',
+		ease : Linear,
+		onComplete: function(){
+			returnClass();
+		}
+	}).to( $Luffy, 1.2, {
+		className: '+=stance-breathing',
+		onComplete: function(){
+			returnClass();
+		}
+	}).to( $Luffy, 1, {
+		className: '+=stance-bomb',
+		onComplete: function(){
+			changeChar();
+		}
+	});
+
+	function returnClass(){
+		$Luffy.attr('class', 'luffy');
+	}
+
+	function changeChar(){
+		$Luffy.attr('class', 'sanji');
+	}
 })
 </script>
 </body>
