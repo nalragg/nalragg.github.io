@@ -35,6 +35,3 @@ footer_html = hereDoc(function () {/*
 document.getElementById('header').innerHTML = header_html;
 document.getElementById('footer').innerHTML = footer_html;
 
-document.write('<script src="http://'
- + window.location.hostname
- + ':35729/livereload.js?snipver=1" type="text/javascript"><\/script>');
