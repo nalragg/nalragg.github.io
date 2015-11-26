@@ -55,7 +55,7 @@ $s-motion: all 0.5s cubic-bezier(0.075, 0.820, 0.165, 1.000);
 			}
 			&:hover {
 				.cover {
-					// margin: 3%;
+					//
 				}
 			}
 		}
@@ -439,13 +439,20 @@ $s-motion: all 0.5s cubic-bezier(0.075, 0.820, 0.165, 1.000);
 			display: inline-block;
 			color: $white;
 			text-decoration: none;
-			@include transition(all 2s ease);
 			vertical-align: middle;
 			width: 50%;
 			background-color: rgba(40, 40, 40, 0.2);
+		}
+	}
 
-			&:hover {
-				//
+
+	&.section-ex {
+		.h {
+			span {
+				display: inline-block;
+				vertical-align: middle;
+				width: 50%;
+				background-color: rgba(40, 40, 40, 0.2);
 			}
 		}
 	}
@@ -723,7 +730,7 @@ $s-motion: all 0.5s cubic-bezier(0.075, 0.820, 0.165, 1.000);
 				overflow: hidden;
 				width: percentage(1/5);
 				@include transform(translateX(-100%));
-				@include animation(inView $ani-duration*2 cubic-bezier(0.600, -0.280, 0.735, 0.045) forwards);
+				@include animation(inView $ani-duration*2 cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards);
 				// @include opacity(0);
 
 				&:nth-child(1) {

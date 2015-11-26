@@ -1377,13 +1377,14 @@ body {
     display: inline-block;
     color: #fff;
     text-decoration: none;
-    -moz-transition: all 2s ease;
-    -o-transition: all 2s ease;
-    -webkit-transition: all 2s ease;
-    transition: all 2s ease;
     vertical-align: middle;
     width: 50%;
     background-color: rgba(40, 40, 40, 0.2); }
+.section.section-ex .h span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%;
+  background-color: rgba(40, 40, 40, 0.2); }
 .section.on .cover {
   -webkit-animation: fade 0.4s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
   -moz-animation: fade 0.4s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
@@ -1783,11 +1784,11 @@ body {
   -ms-transform: translateX(-100%);
   -o-transform: translateX(-100%);
   transform: translateX(-100%);
-  -webkit-animation: inView 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
-  -moz-animation: inView 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
-  -ms-animation: inView 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
-  -o-animation: inView 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
-  animation: inView 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards; }
+  -webkit-animation: inView 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  -moz-animation: inView 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  -ms-animation: inView 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  -o-animation: inView 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation: inView 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
   .section.on.section-ex .section-cell:nth-child(1) {
     -webkit-animation-delay: 0s;
     -moz-animation-delay: 0s;
