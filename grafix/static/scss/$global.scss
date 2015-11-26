@@ -1,0 +1,230 @@
+@charset "UTF-8";
+// --------------------------------------------------
+// $global.scss : global variables & mixins
+// --------------------------------------------------
+
+// media query
+// --------------------------------------------------
+$mq: "only all";
+
+$q-max-tablet: 		"and (max-width: 1023px)";	// 1024 미만
+$q-max-tablet-s: 	"and (max-width: 767px)";	// 768 미만 (아이패드 portrait보다 작음)
+$q-max-mobile-l: 	"and (max-width: 599px)";	// 600 미만 (타블렛 최소 사이즈 600)
+$q-max-mobile: 		"and (max-width: 384px)";	// 385 미만
+
+$q-min-mobile-l: 	"and (min-width: 385px)";
+$q-min-tablet-s: 	"and (min-width: 600px)";
+$q-min-portrait: 	"and (min-width: 768px)";
+$q-min-1024:		"and (min-width: 1024px)";
+$q-min-laptop: 		"and (min-width: 1280px)";
+$q-min-desktop: 	"and (min-width: 1440px)";
+$q-min-wide: 		"and (min-width: 1600px)";
+
+$mobile-l:		$mq $q-min-mobile-l;
+$tablet-s:		$mq $q-min-tablet-s;
+$tablet:		$mq $q-min-portrait;
+$w1024:			$mq $q-min-1024;
+$laptop:		$mq $q-min-laptop;
+$desktop:		$mq $q-min-desktop;
+
+
+// layout
+// --------------------------------------------------
+// $p-default: 7.03125%;
+// $p-portrait: 6.25%;
+// $p-mobile-l: 4.6875%;
+$p-default: 7%;
+$p-portrait: 30px;
+$p-mobile: 15px;
+
+$w-default: 1120;
+// $w-max: 1100px;
+// $w-narrow: 940px;
+$w-mobile: 320;
+
+
+// fonts
+// --------------------------------------------------
+$font-default: 'YouandiModernTR', 'Malgun Gothic', '맑은 고딕', 'Nanum Gothic', '나눔 고딕', '돋움', dotum, sans-serif;
+$sans: $font-default;
+$serif: $font-default;
+$font-gnb: $font-default;
+$font-title: $font-default;
+
+
+// image path
+// --------------------------------------------------
+$img: '../images/';
+
+// color guide
+// --------------------------------------------------
+$white: #fff;
+$fog: #f0f0f0;
+$ash: #eee;
+
+$silver-light: #e0e0e0;
+$silver: #cccdce;
+$silver-dark: #aaa;
+
+$gray-light: #999;
+$gray: #767676;
+$gray-dark: #555;
+
+$dark: #333;
+$ink: #191919;
+$black: #000;
+
+$brand: #01a896;
+$sub: #20cecd;
+$yellow: #fdb73e;
+$pink: #ec1774;
+$blue: #234189;
+$purple: #923d9b;
+
+
+// mixins
+// --------------------------------------------------
+@mixin clearfix {
+	zoom: 1;
+
+	&:before {
+		content: '';
+		display: block;
+	}
+
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin ellipsis {
+	overflow: hidden;
+	display: inline-block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: normal;
+	display: block;
+}
+
+// @mixin ellipsis { // multiline
+// 	overflow: hidden;
+// 	display: -webkit-box;
+// 	-webkit-line-clamp: $line;
+// 	-webkit-box-orient: vertical;
+// 	text-overflow: ellipsis;
+// 	word-wrap: normal;
+// }
+
+@mixin opacity($value) {
+	$valuePercent: $value * 100;
+
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{#valuePercent})";
+	filter: alpha(opacity=$valuePercent);
+	opacity: $value;
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@mixin transform($arguments...) {
+	-webkit-transform: $arguments;
+	   -moz-transform: $arguments;
+	    -ms-transform: $arguments;
+	     -o-transform: $arguments;
+	        transform: $arguments;
+}
+
+@mixin transform-origin($arguments...) {
+	-webkit-transform-origin: $arguments;
+	   -moz-transform-origin: $arguments;
+	    -ms-transform-origin: $arguments;
+	     -o-transform-origin: $arguments;
+	        transform-origin: $arguments;
+}
+
+@mixin transform-style($arguments...) {
+	-webkit-transform-style: $arguments;
+	   -moz-transform-style: $arguments;
+	    -ms-transform-style: $arguments;
+	     -o-transform-style: $arguments;
+	        transform-style: $arguments;
+}
+
+@mixin perspective($value) {
+	-webkit-perspective: $value;
+	        perspective: $value;
+}
+
+@mixin perspective-origin($value) {
+	-webkit-perspective-origin: $value;
+	        perspective-origin: $value;
+}
+
+@mixin animation($arguments...) {
+	-webkit-animation: $arguments;
+	   -moz-animation: $arguments;
+	    -ms-animation: $arguments;
+	     -o-animation: $arguments;
+	        animation: $arguments;
+}
+
+@mixin animation-delay($arguments...) {
+	-webkit-animation-delay: $arguments;
+	   -moz-animation-delay: $arguments;
+	    -ms-animation-delay: $arguments;
+	     -o-animation-delay: $arguments;
+	        animation-delay: $arguments;
+}
+
+@mixin shadow($arguments...) {
+	-webkit-box-shadow: $arguments;
+	   -moz-box-shadow: $arguments;
+	        box-shadow: $arguments;
+}
+
+@mixin box-sizing {
+	$sizing: border-box;
+
+	-webkit-box-sizing: $sizing;
+	   -moz-box-sizing: $sizing;
+	    -ms-box-sizing: $sizing;
+	        box-sizing: $sizing;
+}
+
+@mixin radius($r) {
+	-webkit-border-radius: $r;
+	   -moz-border-radius: $r;
+	        border-radius: $r;
+}
+
+@mixin v-mid {
+	white-space: nowrap;
+
+	&-cell {
+		display: inline-block;
+		vertical-align: middle;
+		white-space: normal;
+	}
+
+	&:after {
+		content: "";
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+	}
+}
+
+@mixin center {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}

@@ -1,0 +1,747 @@
+@charset "UTF-8";
+/* --------------------------------------------------
+* grafix style
+* -------------------------------------------------- */
+
+$d-motion: all 0.5s linear;
+$s-motion: all 0.5s cubic-bezier(0.075, 0.820, 0.165, 1.000);
+
+// section
+.section {
+	$w-circle: 160;
+	$h-circle: 160;
+
+	& {
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		@include perspective(900px);
+
+		.cover {
+			@include center;
+			z-index: 9;
+			@include perspective(900px);
+		}
+
+		.l-cover {
+			@include center;
+			@include transform-style(preserve-3d);
+		}
+	}
+
+	&-container {
+		// overflow: hidden;
+		width: 100%;
+		height: 100%;
+		@include transition($s-motion);
+
+		.l-section {
+			position: relative;
+			// width: 50%;
+			width: 100%;
+			height: 100%;
+			// float: left;
+		}
+
+		.__left {
+			.cover {
+				@include center;
+				@include box-sizing();
+				margin: 0%;
+				background-color: $brand;
+				@include transition($s-motion);
+				z-index: 99;
+			}
+			&:hover {
+				.cover {
+					// margin: 3%;
+				}
+			}
+		}
+
+		.__right {
+			background-color: $pink;
+		}
+
+		.square {
+			@include center;
+			width: $w-circle + px;
+			height: $h-circle + px;
+			@include shadow(2px 2px 5px 0 rgba(0, 0, 0, 0.2));
+		}
+
+		.circle {
+			@include center;
+			width: $w-circle + px;
+			height: $h-circle + px;
+			border-radius: 50%;
+			@include shadow(2px 2px 5px 0 rgba(0, 0, 0, 0.2));
+		}
+
+		.btn-w {
+			background-color: $yellow;
+
+			:after {
+				content: '';
+				@include center;
+			}
+		}
+	}
+	&-cell {
+		position: relative;
+		float: left;
+		width: 25%;
+		height: 100%;
+		@include transform-style(preserve-3d);
+
+		&.section-ex & {
+			width: percentage(1/5);
+		}
+
+		&.position-x .circle {
+			@include animation(posX 2s linear infinite alternate);
+		}
+		&.position-y .circle {
+			@include animation(posY 2s linear infinite alternate);
+		}
+		&.position-z .circle {
+			@include animation(posZ 2s linear infinite alternate);
+		}
+		&.position-xy .circle {
+			@include animation(posXY 2s linear infinite alternate);
+		}
+
+		&.scale-in .square {
+			@include animation(scaleIn 2s linear infinite);
+		}
+		&.scale-Out .square {
+			@include animation(scaleOut 2s linear infinite);
+		}
+		&.scale-fadein .square {
+			@include animation(scaleFadein 2s linear infinite);
+		}
+		&.scale-fadeout .square {
+			@include animation(scaleFadeout 2s linear infinite);
+		}
+
+		&.rotate-x .square {
+			@include animation(rotateX 2s linear infinite);
+		}
+		&.rotate-y .square {
+			@include animation(rotateY 2s linear infinite);
+		}
+		&.rotate-z .square {
+			@include animation(rotateZ 2s linear infinite);
+		}
+		&.rotate-xy .square {
+			@include transform-origin(center top);
+			@include animation(rotateFlip 2s linear infinite);
+		}
+
+		&.opacity-in .circle {
+			@include animation(opacityIn 2s linear infinite);
+		}
+		&.opacity-out .circle {
+			@include animation(opacityOut 2s linear infinite);
+		}
+		&.opacity-scale .circle {
+			@include animation(opacitySclae 2s linear infinite);
+		}
+		&.opacity-position .circle {
+			@include animation(opacityPos 2s linear infinite);
+		}
+
+		.line {
+			content: '';
+			@include center;
+			width: 2px;
+			height: percentage(4/5);
+			background-color: $yellow;
+			z-index: 1;
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: -20px;
+				width: 40px;
+				height: 2px;
+				border-radius: 2px;
+				background-color: $yellow;
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				left: -20px;
+				bottom: 0;
+				width: 40px;
+				height: 2px;
+				border-radius: 2px;
+				background-color: $yellow;
+			}
+
+			&-grid {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+
+				&:before {
+					content: '';
+					position: absolute;
+					top: 33%;
+					left: -20px;
+					width: 40px;
+					height: 2px;
+					border-radius: 2px;
+					background-color: $yellow;
+				}
+
+				&:after {
+					content: '';
+					position: absolute;
+					left: -20px;
+					top: 66%;
+					width: 40px;
+					height: 2px;
+					border-radius: 2px;
+					background-color: $yellow;
+				}
+			}
+		}
+
+		.menu {
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: percentage(7/10);
+			height: percentage(4.5/10);
+			margin: auto;
+			border: 10px solid #333;
+			border-radius: 10px;
+			border-bottom-width: 60px;
+			background-color: $gray-dark;
+
+			&-cover {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				width: percentage(1);
+				height: percentage(1);
+				@include shadow(-1px 0px 5px 5px #333);
+				@include animation(sideNav 5s linear infinite);
+
+				&:after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background-color: $fog;
+					z-index: 1;
+				}
+
+				&:before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					height: 45px;
+					background-color: $silver-dark;
+					z-index: 10;
+				}
+			}
+
+			.icon {
+				display: block;
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				width: 25px;
+				height: 25px;
+				background-color: #575757;
+				z-index: 101;
+			}
+		}
+
+		.thumb {
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: percentage(7/10);
+			height: percentage(2.2/10);
+			margin: auto;
+			border: 8px solid #f1f1f1;
+			border-radius: 8px;
+			border-bottom-width: 60px;
+			background-color: $sub;
+
+			&:before {
+				content: '';
+				position: absolute;
+				left: -10%;
+				bottom: -50%;
+				width: 100%;
+				height: 100%;
+				background-color: $brand;
+				border-radius: 20px;
+				@include transform(rotate(45deg));
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				right: -25%;
+				bottom: -40%;
+				width: 75%;
+				height: 75%;
+				background-color: $brand;
+				border-radius: 20px;
+				@include transform(rotate(45deg));
+				@include shadow(-130px -160px 100px -20px $yellow);
+			}
+
+			&-cover {
+				@include center;
+				background-color: rgba(0, 0, 0, 0.8);
+				@include animation(opacityOut 3s linear infinite);
+				z-index: 1;
+			}
+
+			.icon {
+				position: absolute;
+				top: 30%;
+				left: 70%;
+				border-width: 0 10px 20px 10px;
+				border-style: solid;
+				border-color: transparent transparent $white transparent;
+				@include transform(rotate(-30deg));
+				@include animation(coverAni 3s linear infinite);
+				z-index: 10;
+
+				&:after {
+					content: '';
+					@include center;
+					left: -3px;
+					bottom: -40px;
+					width: 5px;
+					height: 20px;
+					background-color: $white;
+					border-radius: 5px;
+				}
+			}
+		}
+
+		.menu-cover,
+		.thumb-cover,
+		.icon,
+		.circle {
+			.__ex01 & {
+				@include animation(exampleAni 3s linear infinite alternate);
+				z-index: 10;
+			}
+
+			&.linear {
+				-webkit-animation-timing-function: linear;
+						animation-timing-function: linear;
+			}
+			&.ease {
+				-webkit-animation-timing-function: ease;
+						animation-timing-function: ease;
+			}
+			&.ease-in {
+				-webkit-animation-timing-function: ease-in;
+						animation-timing-function: ease-in;
+			}
+			&.ease-out {
+				-webkit-animation-timing-function: ease-out;
+						animation-timing-function: ease-out;
+			}
+			&.ease-in-out {
+				-webkit-animation-timing-function: ease-in-out;
+						animation-timing-function: ease-in-out;
+			}
+			&.ease-custom {
+				-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+						animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+			}
+		}
+	}
+	&-intro {
+	}
+	&-position {
+		background-color: $brand;
+
+		.circle { background-color: $yellow; }
+	}
+	&-scale {
+		background-color: $yellow;
+
+		.square { background-color: $pink; }
+	}
+	&-opacity {
+		background-color: $pink;
+
+		.circle { background-color: $blue;}
+	}
+	&-rotate {
+		background-color: $blue;
+
+		.square { background-color: $brand;}
+	}
+	&.__ex01 {
+		background-color: $brand;
+		.circle { background-color: $yellow; }
+	}
+	&.__ex02 {
+		background-color: $yellow;
+	}
+	&.__ex03 {
+		background-color: $pink;
+	}
+
+	.h {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		color: $white;
+		font-weight: normal;
+		font-size: 3em;
+		font-family: $font-title;
+		text-align: center;
+		z-index: 10;
+
+		&:after {
+			content: '';
+			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+		}
+
+		span {
+			display: block;
+		}
+
+		a {
+			display: inline-block;
+			color: $white;
+			text-decoration: none;
+			@include transition(all 2s ease);
+			vertical-align: middle;
+			width: 50%;
+			background-color: rgba(40, 40, 40, 0.2);
+
+			&:hover {
+				//
+			}
+		}
+	}
+
+	&.on {
+		$ani-duration: 0.4s;
+		$ani-delay: 0.4s;
+
+		.cover {
+			@include animation(fade $ani-duration cubic-bezier(0.600, -0.280, 0.735, 0.045) forwards);
+			@include animation-delay($ani-delay + 1s);
+		}
+
+		&.section-position .cover {
+			$s-circle: 600;
+
+			& {
+				background-color: $brand;
+			}
+
+			.circle {
+				width: $s-circle + px;
+				height: $s-circle + px;
+				background-color: $yellow;
+				@include shadow(none);
+				@include transform(rotate(45deg));
+				@include animation(flipScale $ani-duration cubic-bezier(0.600, -0.280, 0.735, 0.045) forwards);
+				@include animation-delay($ani-delay*3);
+
+				&-half {
+					position: relative;
+					width: percentage(1);
+					height: percentage(1/2);
+					z-index: 1;
+
+					&.__top {
+						border-radius: ($s-circle/2 + px) ($s-circle/2 + px) 0 0;
+						@include transform-origin(center bottom);
+						@include animation(flipHalf $ani-duration cubic-bezier(0.600, 0.040, 0.980, 0.335) forwards);
+						background-color: $yellow;
+					}
+					&.__bottom {
+						border-radius: 0 0 ($s-circle/2 + px) ($s-circle/2 + px);
+						@include transform(rotateX(-90deg));
+						@include transform-origin(center top);
+						@include animation(flipHalf $ani-duration cubic-bezier(0.600, 0.040, 0.980, 0.335) forwards reverse);
+						@include animation-delay($ani-delay);
+						background-color: $brand;
+					}
+				}
+
+				&:before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					margin: auto;
+					width: percentage(1);
+					height: percentage(1/2);
+					border-radius: ($s-circle/2 + px) ($s-circle/2 + px) 0 0;
+					background-color: $brand;
+					@include transform-origin(center bottom);
+					@include animation(flipHalf $ani-duration cubic-bezier(0.600, 0.040, 0.980, 0.335) forwards);
+					@include animation-delay($ani-delay + 0.2s);
+				}
+
+				&:after {
+					content: '';
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					margin: auto;
+					width: percentage(1);
+					height: percentage(1/2);
+					border-radius: 0 0 ($s-circle/2 + px) ($s-circle/2 + px);
+					background-color: $yellow;
+					@include transform(rotateX(-90deg));
+					@include transform-origin(center top);
+					@include animation(flipHalf $ani-duration cubic-bezier(0.600, 0.040, 0.980, 0.335) forwards reverse);
+					@include animation-delay($ani-delay + 0.6s);
+					z-index: 2;
+				}
+			}
+		}
+
+		&.section-scale .cover {
+			$and-delay: $ani-delay*4;
+
+			& {
+				background-color: $brand;
+			}
+
+			.section-cell {
+				overflow: hidden;
+			}
+
+			.circle {
+				background-color: $yellow;
+				@include shadow(none);
+				@include animation(ccScale $ani-duration*3 cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards);
+			}
+
+			.__piece01 {
+				@include animation-delay($ani-delay - 0.1);
+			}
+			.__piece02 {
+				@include animation-delay($ani-delay);
+			}
+			.__piece03 {
+				@include animation-delay($ani-delay + 0.1);
+			}
+			.__piece04 {
+				@include animation-delay($ani-delay + 0.2);
+			}
+		}
+
+		&.section-opacity .cover {
+			$s-circle: 600;
+
+			& {
+				background-color: $yellow;
+			}
+
+			.section-cell {
+				overflow: hidden;
+			}
+
+			.square {
+				background-color: $pink;
+				@include shadow(none);
+				@include animation(drawAni $ani-duration*2 cubic-bezier(0.600, -0.280, 0.735, 0.045) forwards);
+			}
+
+			.circle {
+				width: $s-circle + px;
+				height: $s-circle + px;
+				background-color: transparent;
+				@include shadow(none);
+				@include transform(rotate(90deg));
+				@include animation(opacityIn $ani-duration cubic-bezier(0.600, -0.280, 0.735, 0.045) forwards);
+				@include animation-delay($ani-delay*3/2);
+				@include opacity(0);
+				z-index: 1;
+				// @include transform(scale(0));
+
+				&-half {
+					overflow: hidden;
+					position: absolute;
+					left: 0;
+					right: 0;
+					margin: auto;
+					width: percentage(1);
+					height: percentage(1/2);
+					background-color: $pink;
+
+					&.__top {
+						top: 0;
+						border-radius: ($s-circle/2 + px) ($s-circle/2 + px) 0 0;
+						z-index: 11;
+
+						&:before {
+							content: '';
+							position: absolute;
+							top: 0;
+							left: 0;
+							right: 0;
+							width: 100%;
+							height: 100%;
+							border-radius: ($s-circle/2 + px) ($s-circle/2 + px) 0 0;
+							background-color: $blue;
+							@include animation(rotateHalf $ani-duration linear forwards);
+							@include animation-delay($ani-delay*2);
+							@include transform(rotate(-180deg));
+							@include transform-origin(center bottom);
+						}
+					}
+
+					&.__bottom {
+						bottom: 0;
+						background-color: $pink;
+						border-radius: 0 0 ($s-circle/2 + px) ($s-circle/2 + px);
+						@include transform-origin(center top);
+						z-index: 10;
+
+						&:after {
+							content: '';
+							position: absolute;
+							left: 0;
+							right: 0;
+							bottom: 0;
+							width: 100%;
+							height: 100%;
+							border-radius: 0 0 ($s-circle/2 + px) ($s-circle/2 + px);
+							background-color: $blue;
+							@include animation(rotateHalf $ani-duration linear forwards);
+							@include animation-delay($ani-delay*3);
+							@include transform(rotate(-180deg));
+							@include transform-origin(center top);
+							z-index: 1;
+						}
+					}
+				}
+			}
+		}
+
+		&.section-rotate .cover {
+			$s-cube: 250;
+
+			& {
+				background-color: $blue;
+				@include perspective(900px);
+			}
+
+			.square {
+				width: percentage(1);
+				height: percentage(1);
+				background-color: transparent;
+				@include shadow(none);
+				@include transform-style(preserve-3d);
+				@include animation(rotateSquare $ani-duration*3 cubic-bezier(0.175, 0.885, 0.320, 1.275) $ani-delay forwards);
+
+				&-container {
+					@include center;
+					width: $s-cube + px;
+					height: $s-cube + px;
+					@include animation(bounceScale $ani-duration+0.2s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards);
+				}
+				&-piece {
+					@include center;
+					width: percentage(1);
+					height: percentage(1);
+					// background-color: $pink;
+					@include opacity(0.8);
+				}
+
+				.__cube01 {
+					content: '1';
+					background-color: $pink;
+					@include transform(rotateY( 0deg ) translateZ( $s-cube/2 + px ));
+				}
+				.__cube02 {
+					content: '2';
+					background-color: $pink;
+					@include transform(rotateX( 180deg ) translateZ( $s-cube/2 + px ));
+				}
+				.__cube03 {
+					content: '3';
+					background-color: $brand;
+					@include transform(rotateY( 90deg ) translateZ( $s-cube/2 + px ));
+				}
+				.__cube04 {
+					content: '4';
+					background-color: $brand;
+					@include transform(rotateY( -90deg ) translateZ( $s-cube/2 + px ));
+
+				}
+				.__cube05 {
+					content: '5';
+					background-color: $yellow;
+					@include transform(rotateX( 90deg ) translateZ( $s-cube/2 + px ));
+				}
+				.__cube06 {
+					content: '6';
+					background-color: $yellow;
+					@include transform(rotateX( -90deg ) translateZ( $s-cube/2 + px ));
+				}
+			}
+		}
+
+		&.section-ex {
+
+			.section-cell  {
+				overflow: hidden;
+				width: percentage(1/5);
+				@include transform(translateX(-100%));
+				@include animation(inView $ani-duration*2 cubic-bezier(0.600, -0.280, 0.735, 0.045) forwards);
+				// @include opacity(0);
+
+				&:nth-child(1) {
+					@include animation-delay($ani-delay*0);
+				}
+				&:nth-child(2) {
+					@include animation-delay($ani-delay*1/2);
+				}
+				&:nth-child(3) {
+					@include animation-delay($ani-delay);
+				}
+				&:nth-child(4) {
+					@include animation-delay($ani-delay*3/2);
+				}
+				&:nth-child(5) {
+					@include animation-delay($ani-delay*2);
+				}
+			}
+		}
+	}
+}

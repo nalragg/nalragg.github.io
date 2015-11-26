@@ -1,0 +1,182 @@
+@charset "UTF-8";
+/* --------------------------------------------------
+ * layout
+ * -------------------------------------------------- */
+
+// mixin
+$font-size: 1.6;
+$pd-layout: 10;
+
+// defaul layout
+html {
+	height: 100%;
+}
+
+body {
+	overflow: hidden;
+	@include box-sizing();
+	height: 100%;
+	// padding: $pd-layout + px;
+
+	&.__is-coverd {
+
+	}
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 101;
+
+	h1 {
+		color: $white;
+		font-size: 5em;
+		font-family: $font-title;
+	}
+}
+
+.sidenav {
+	$w-sidenav: 80;
+	$h-sidenav: 40;
+	$flip-motion: all 0.5s cubic-bezier(0.075, 0.820, 0.165, 1.000);
+
+	& {
+		position: fixed;
+		top: $pd-layout + px;
+		left: $pd-layout*2 + px;
+		// bottom: 0;
+		margin: auto 0;
+		color: $white;
+		font-size: $font-size + em;
+		@include perspective(900px);
+		z-index: 101;
+	}
+
+	&:after {
+		content: '';
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+	}
+
+	&-menu {
+		@include clearfix();
+		@include transform-style(preserve-3d);
+	}
+
+	.nav-d1 {
+		position: relative;
+		// float: left;
+
+		&:nth-child(1) {
+			.nav-d1-a {
+				background-color: #404040;
+			}
+		}
+		&:nth-child(2) {
+			.nav-d1-a {
+				background-color: #505050;
+			}
+			.nav-d2 { left: -100% }
+		}
+
+		&.on {
+			z-index: 10;
+
+			.nav-d1-a {
+				background-color: #303030;
+			}
+		}
+
+		&-h {
+			position: relative;
+			@include box-sizing();
+			font-weight: normal;
+			font-size: 1.8em;
+			text-align: center;
+		}
+
+		&-a {
+			display: block;
+			width: $w-sidenav*2 + px;
+			height: $h-sidenav*2 + px;
+			@include transition($flip-motion);
+
+			&:after {
+				content: '';
+				display: inline-block;
+				height: 100%;
+				vertical-align: middle;
+			}
+
+			span {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	.nav-d2 {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: $w-sidenav*2 + px;
+		padding-top: 2px;
+		@include box-sizing();
+
+		li {
+			position: relative;
+			padding-bottom: 2px;
+			@include perspective(450px);
+
+			&:nth-child(1) .nav-d2-a {background-color: #606060; &:hover { background-color: $yellow; } }
+			&:nth-child(2) .nav-d2-a {background-color: #707070; &:hover { background-color: $pink; } }
+			&:nth-child(3) .nav-d2-a {background-color: #808080; &:hover { background-color: $blue; } }
+			&:nth-child(4) .nav-d2-a {background-color: #909090; &:hover { background-color: $brand; } }
+
+			&:hover .nav-d2-a { background-color: #303030; }
+		}
+
+		&-a {
+			position: relative;
+			display: block;
+			width: $w-sidenav*2 + px;
+			height: $h-sidenav*3/2 + px;
+			color: $white;
+			background-color: #909090;
+			@include opacity(0);
+			@include transform-origin(center top);
+			@include transition($flip-motion);
+
+			span {
+				display: inline-block;
+				width: 100%;
+				vertical-align: middle;
+				@include box-sizing();
+				padding-left: 0.8em;
+			}
+
+			&:after {
+				content: '';
+				display: inline-block;
+				height: 100%;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	a {
+		color: $white;
+		text-decoration: none;
+	}
+}
+
+.main {
+	@include box-sizing();
+	height: 100%;
+	// border: 8px solid $white;
+	// padding: $pd-layout + px;
+}

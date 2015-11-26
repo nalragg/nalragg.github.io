@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* --------------------------------------------------
+ * fonts.css - font family
+ * -------------------------------------------------- */
+
+ /* 배달의 민족 - 도현체 */
+ @font-face {
+   font-family: 'BM';
+   font-style: normal;
+   font-weight: 400;
+   src: url(./fonts/BMDOHYEON_ttf_subset.eot);
+   src: url(./fonts/BMDOHYEON_ttf_subset.woff) format('woff');
+ }
+
+/* YouandiModernTR - 비공개 폰트 */
+ @font-face {
+ 	font-family: 'YouandiModernTR';
+ 	font-style: normal;
+ 	font-weight: normal;
+ 	src: url(./fonts/YouandiModernTR.eot);
+ 	src: url(./fonts/YouandiModernTR.eot?#iefix) format('embedded-opentype'),
+          url(./fonts/YouandiModernTR.woff) format('woff'),
+          url(./fonts/YouandiModernTR.ttf) format('opentype');
+ }
+
+/* AvantGardeITCTT Demi - 비공개 폰트 */
+ @font-face {
+ 	font-family: 'AvantGardeITCTT_Demi';
+ 	font-style: normal;
+ 	font-weight: normal;
+ 	src: url(./fonts/AvantGardeITCTT_Demi.eot);
+ 	src: url(./fonts/AvantGardeITCTT_Demi.eot?#iefix) format('embedded-opentype'),
+          url(./fonts/AvantGardeITCTT_Demi.woff) format('woff'),
+          url(./fonts/AvantGardeITCTT_Demi.ttf) format('opentype');
+ }
