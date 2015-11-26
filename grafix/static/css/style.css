@@ -1365,7 +1365,7 @@ body {
   font-size: 3em;
   font-family: "YouandiModernTR", "Malgun Gothic", "맑은 고딕", "Nanum Gothic", "나눔 고딕", "돋움", dotum, sans-serif;
   text-align: center;
-  z-index: 10; }
+  z-index: 20; }
   .section .h:after {
     content: '';
     display: inline-block;
