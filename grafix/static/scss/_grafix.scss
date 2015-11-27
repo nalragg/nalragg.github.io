@@ -135,7 +135,7 @@ $s-motion: all 0.5s cubic-bezier(0.075, 0.820, 0.165, 1.000);
 			@include animation(rotateZ 2s linear infinite);
 		}
 		&.rotate-xy .square {
-			@include transform-origin(center top);
+			@include transform-origin(right top);
 			@include animation(rotateFlip 2s linear infinite);
 		}
 
@@ -400,7 +400,58 @@ $s-motion: all 0.5s cubic-bezier(0.075, 0.820, 0.165, 1.000);
 	&-rotate {
 		background-color: $blue;
 
-		.square { background-color: $brand;}
+		.square {
+			$s-cube: 100;
+			$ani-duration: 0.4s;
+
+			& {
+				width: $s-cube + px;
+				height: $s-cube + px;
+				background-color: transparent;
+				@include shadow(none);
+				@include transform-style(preserve-3d);
+			}
+
+			&-piece {
+				@include center;
+				width: percentage(1);
+				height: percentage(1);
+				// background-color: $pink;
+				@include opacity(0.8);
+			}
+
+			.__cube01 {
+				content: '1';
+				background-color: $pink;
+				@include transform(rotateY( 0deg ) translateZ( $s-cube/2 + px ));
+			}
+			.__cube02 {
+				content: '2';
+				background-color: $pink;
+				@include transform(rotateX( 180deg ) translateZ( $s-cube/2 + px ));
+			}
+			.__cube03 {
+				content: '3';
+				background-color: $brand;
+				@include transform(rotateY( 90deg ) translateZ( $s-cube/2 + px ));
+			}
+			.__cube04 {
+				content: '4';
+				background-color: $brand;
+				@include transform(rotateY( -90deg ) translateZ( $s-cube/2 + px ));
+
+			}
+			.__cube05 {
+				content: '5';
+				background-color: $yellow;
+				@include transform(rotateX( 90deg ) translateZ( $s-cube/2 + px ));
+			}
+			.__cube06 {
+				content: '6';
+				background-color: $yellow;
+				@include transform(rotateX( -90deg ) translateZ( $s-cube/2 + px ));
+			}
+		}
 	}
 	&.__ex01 {
 		background-color: $brand;
@@ -668,7 +719,7 @@ $s-motion: all 0.5s cubic-bezier(0.075, 0.820, 0.165, 1.000);
 				@include perspective(900px);
 			}
 
-			.square {
+			.cube {
 				width: percentage(1);
 				height: percentage(1);
 				background-color: transparent;
