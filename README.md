@@ -12,4 +12,24 @@ sherlock @ iropke
 <h6>heading 06</h6>
 ```
 
+### 목록
+```html
 
+<ul>
+	<li>item 1</li>
+	<li>item 2</li>
+	<li>item 3</li>
+</ul>
+<ol>
+	<li>item 1</li>
+	<li>item 2</li>
+	<li>item 3</li>
+</ol>
+```
+- item 1
+- item 2
+- item 3
+
+1. item 1
+1. item 2
+1. item 3
