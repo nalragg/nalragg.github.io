@@ -69,3 +69,10 @@ sherlock @ iropke
 ```
 > "케빈이 미래에셋이라고하였다." <br>
 > "야무 선생님은 옹호하였다."
+
+
+### 표
+Jop Type | Role
+--- | ---
+planner | Plan
+Designer | Design
