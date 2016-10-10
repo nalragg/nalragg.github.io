@@ -1,0 +1,31 @@
+@import url(http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  color: #fff;
+  background: url("../bg.jpg") no-repeat center top;
+  font-size: 87.5em;
+  line-height: 1.5;
+  font-family: 'Spoqa Han Sans', 'Dotum', Sans-serif;
+  text-align: center; }
+
+h1 {
+  margin: 0;
+  font-weight: 200;
+  font-size: 5rem;
+  animation: wiggle 5s infinite alternate; }
+
+@keyframes wiggle {
+  0%, 50%, 100% {
+    color: deepskyblue;
+    text-shadow: 0 0 10px deepskyblue;
+    transform: translateY(-10%); }
+  25%, 75% {
+    color: deeppink;
+    text-shadow: 0 0 2px deeppink;
+    transform: translateY(10%); } }
+
+/*# sourceMappingURL=style.css.map */
