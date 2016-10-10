@@ -26,10 +26,13 @@ sherlock @ iropke
 	<li>item 3</li>
 </ol>
 ```
+
+### 비순차 목록
 - item 1
 - item 2
 - item 3
 
+### 순차 목록
 1. item 1
 1. item 2
 1. item 3
