@@ -10,7 +10,6 @@
 	font-size: 24px;
 	line-height: 1.66;
 }
-
 .header .logo a {
 	display: block;
 }
@@ -37,18 +36,21 @@
 	letter-spacing: 0.2em;
 }
 
+/*footer*/
 .footer {
 	height: 360px;
 }
+/*intro*/
 .intro {
 	overflow: hidden;
+	text-align: center;
 	height: 580px;
 }
 
 /* contents */
 .contents {
-	/*background: #e5e5e5;*/
-	background-color: rgba(229, 229, 229, 0.5);
+	background: #e5e5e5;
+	/*background-color: rgba(229, 229, 229, 0.5);*/
 }
 .contents .row {
 	padding-top: 20px;
