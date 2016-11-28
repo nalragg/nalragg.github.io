@@ -1,0 +1,31 @@
+/*! reset.css © yamoo9.net, 2016 */
+html {
+  overflow-y: scroll;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+	color: #5b5d69;
+  line-height: 1.5;
+  font-size: 1em;
+  font-family: 'PT Serif', serif;
+}
+
+img {
+	vertical-align: top;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	color: #3c3d48;
+	font-family: 'Montserrat', sans-serif;
+}
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
